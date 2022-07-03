@@ -1,0 +1,78 @@
+* {
+    margin: 0px;
+    padding: 0;
+    color: black;
+
+}
+
+h1, h1 span {
+    color: red;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.titulo-logo{
+    color: black;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cuerpo{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 25px;
+}
+
+.navmenu {
+    border: 1px solid black;
+    margin: 10px 0;
+    background-color: #37D9F9;
+}
+
+.logo{
+    flex: 30%;
+}
+
+.menu{
+    display: inline-block;
+    padding: 20px;
+    align-items: center;
+}
+
+
+.navmenu a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: chartreuse;
+    text-decoration: none;
+}
+
+.myDynamicTable{
+    display: flex;
+}
+
+table, th, td {
+    border: 1px solid black;
+    margin: 0 auto;
+    text-transform: uppercase;
+  }
+tr:nth-child(even) {
+background-color: #D6EEEE;
+}
+
+@media (max-width: 600px) {
+    .ulista{
+        display: none;
+    }
+
+    #logo:checked ~ .ulista{
+        display: block
+    }
+  }
