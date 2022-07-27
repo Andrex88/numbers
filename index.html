@@ -15,42 +15,49 @@
     </header>
     <nav class="container navmenu">
         <div class="logo">
-            <a href="#" id="logo">
-                <h2 class="">UN LOGO</h2>
+            <a id="logo">
+                <h2 class="logo_h2">BATU CORPS</h2>
             </a>
         </div>
         <ul class="ulista">
             <li class="menu"><a href="#numeros">numeros</a></li>
             <li class="menu"><a href="#abc">ABC</a></li>
-            <li class="menu"><a href="#">Servicios</a></li>
-            <li class="menu"><a href="#">Contactenos</a></li>
+            <li class="menu"><a >Servicios</a></li>
+            <li class="menu"><a >Contactenos</a></li>
         </ul>
     </nav>
-
+    <!-- <span id="loader" class="loader"></span> -->
     <section class="textoHeader">
         <p>
             HASTA QUE NUMERO CONTAREMOS
         </p>
         <div>
-            <input type="number" id="numero">
+            <input type="number" class="insertText" id="numero">
         </div>
         <div>
-            <input type="button" id="ingresoNumero" value="Contar">
+            <input class="boton" type="button" id="ingresoNumero" value="Contar">
         </div>
 
     </section>
 
     <section id="numeros" class="numero_cuerpo cuerpo">
-        <h1>Aprenderemos numeros del 1 al <span id="numeroX"></span></h1>
+        <h1>Aprenderemos numeros del 1 al <span id="numeroY"></span></h1>
         <div class="numeros" id="contar">
         </div>
     </section>
-    <section id="abc" class="abc cuerpo">
+
+    <section id="abcSection" class="abcSection">
+        <h1>ABECEDARIO</h1>
+        <div class="abc" id="abc">
+        </div>
+    </section>
+    
+    <section id="talk" class="abc cuerpo">
         <h1>HABLEMOS</h1>
         <input type="text" id="texto">
-        <input type="button" id="hablar" value="Decir">
-
+        <input class="boton" type="button" id="hablar" value="Decir">
     </section>
+
     <footer>
         <p>todos los derechos reservados Batu Corp 2022</p>
     </footer>

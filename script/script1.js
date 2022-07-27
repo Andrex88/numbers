@@ -1,47 +1,57 @@
 import { NumeroALetras } from "./NumeroALetras.js";
 
-function addTable(num) {
-  document.getElementById('numeroX').textContent = num;
+function llenarNumeros(num) {
+  document.getElementById('numeroY').textContent = num;
   speechSynthesis.cancel();
-  var table = document.getElementById("contar");
-  var elmtTable = table;
-  var tableRows = elmtTable.getElementsByTagName('tr');
-  var rowCount = tableRows.length;
-
-  for (var x = rowCount - 1; x > 0; x--) {
-    elmtTable.removeChild(tableRows[x]);
-  }
-  document.getElementById("contar").innerHTML = "";
+  var contarId = document.getElementById("contar");
+  contarId.innerHTML = "";
 
   for (var i = 1; i <= num; i++) {
-    // var tr = document.createElement('TR');
-    // table.appendChild(tr);
 
-    const td = document.createElement('p');
-    td.className = "caja";
-    const str = i.toString().concat(" - ").concat(NumeroALetras(i));
-    td.appendChild(document.createTextNode(str));
+    const elementCaja = document.createElement('p');
+    elementCaja.className = "caja";
+    let str = i.toString();
+    if(window.matchMedia("(min-width: 627px)").matches){
+      str = str.concat(" - ").concat(NumeroALetras(i))
+    }
+    elementCaja.appendChild(document.createTextNode(str));
     const number = i;
-    table.appendChild(td);
-    td.addEventListener("click", () => {
+    contarId.appendChild(elementCaja);
+    elementCaja.addEventListener("click", () => {
       decir(NumeroALetras(number));
     });
-    // var td = document.createElement('p');
-    // td.className="caja";
-    // td.appendChild();
-    // table.appendChild(td);
-    // decir(NumeroALetras(i));
+  }
+}
 
+function Abcedario() {
+  speechSynthesis.cancel();
+  var abcId = document.getElementById("abc");
+  abcId.innerHTML = "";
+
+  for (var i = 0; i <= 25; i++) {
+
+    const elementCaja = document.createElement('div');
+    elementCaja.className = "caja";
+    const code = 'A'.charCodeAt(0);
+    let str = String.fromCharCode(code + i);
+    elementCaja.appendChild(document.createTextNode(str));
+    abcId.appendChild(elementCaja);
+    elementCaja.addEventListener("click", () => {
+    decir(str);
+    });
   }
 }
 
 document.getElementById('hablar').addEventListener("click", () => {
   decir(document.getElementById("texto").value);
 });
+
 document.getElementById('ingresoNumero').addEventListener("click", () => {
-  addTable(document.getElementById("numero").value);
+  llenarNumeros(document.getElementById("numero").value);
 });
 
 function decir(texto) {
   speechSynthesis.speak(new SpeechSynthesisUtterance(texto));
 }
+
+Abcedario();
