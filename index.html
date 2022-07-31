@@ -26,13 +26,15 @@
             <li class="menu"><a >Contactenos</a></li>
         </ul>
     </nav>
-    <!-- <span id="loader" class="loader"></span> -->
+    <div class="loading" id="loading">
+        <span id="loader" class="loader"></span>
+    </div>
     <section class="textoHeader">
         <p>
             HASTA QUE NUMERO CONTAREMOS
         </p>
         <div>
-            <input type="number" class="insertText" id="numero">
+            <input type="number" class="insertText" id="numero" min="0" maxlength="5">
         </div>
         <div>
             <input class="boton" type="button" id="ingresoNumero" value="Contar">
