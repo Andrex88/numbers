@@ -9,7 +9,7 @@ body{
 }
 
 h1,
-h1 span {
+h1 span, .texto {
     color: red;
     text-align: center;
     text-transform: uppercase;
@@ -71,7 +71,6 @@ input {
     padding: 20px;
     text-align: center;
     background-color: lightblue;
-    font-weight: bold;
     cursor: pointer;
 }
 
@@ -80,9 +79,10 @@ section{
 }
 
 .caja:hover{
-    background-color: lightgreen;
+    background-color: yellow;
     transition: 1S;
-    border: 2px solid red;
+    border: 1px solid red;
+    font-weight: bold;
 }
 
 .caja:not(:hover){
@@ -177,7 +177,7 @@ footer p {
 
 .loading{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: black;
     display: none;
     justify-content: center;
